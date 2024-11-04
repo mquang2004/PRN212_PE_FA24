@@ -1,0 +1,39 @@
+﻿<Window x:Class="Question2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Question2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="White" Margin="0,0,-12,-381">
+        <TextBox Name="tbSearchTitle"  HorizontalAlignment="Left" Margin="10,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" Text="Title" TextChanged="tbSearchTitle_TextChanged"/>
+        <TextBox Name="tbSearchPublisher"  HorizontalAlignment="Left" Margin="199,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Text="Publisher"/>
+        <Button Name="btSearch" Content="Search" HorizontalAlignment="Center" Margin="0,47,0,0" VerticalAlignment="Top" Width="68" Click="btSearch_Click"/>
+
+        <Label Content="BookId" HorizontalAlignment="Left" Margin="600,54,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="tbBookId"  HorizontalAlignment="Left" Margin="600,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" IsEnabled="False"/>
+
+        <Label Content="Title" HorizontalAlignment="Left" Margin="600,116,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="tbTilte" HorizontalAlignment="Left" Margin="600,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" Height="24"/>
+
+        <Label Content="Publisher" HorizontalAlignment="Left" Margin="600,169,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="tbPublisher" HorizontalAlignment="Left" Margin="600,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" Height="24"/>
+
+        <Label Content="Publication Year" HorizontalAlignment="Left" Margin="600,236,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="tbPubYear" HorizontalAlignment="Left" Margin="600,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" Height="24"/>
+
+        <DataGrid x:Name="BookDataGrid" Margin="0,0,261,393" Height="306" VerticalAlignment="Bottom" SelectionChanged="BookDataGrid_SelectionChanged" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="BookID" Binding="{Binding Id}" Width="100"/>
+                <DataGridTextColumn Header="Title" Binding="{Binding Title}" Width="200"/>
+                <DataGridTextColumn Header="Publisher" Binding="{Binding Publisher}" Width="100"/>
+                <DataGridTextColumn Header="Publication Year" Binding="{Binding PublicationYear}" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="btSave" Content="Save Changes" HorizontalAlignment="Left" Margin="656,315,0,0" VerticalAlignment="Top" Click="btSave_Click"/>
+
+
+
+    </Grid>
+</Window>
